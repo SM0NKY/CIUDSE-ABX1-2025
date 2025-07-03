@@ -1,5 +1,9 @@
 from typing import List, Dict, Any, Callable
 from motor.base import Motor
+from icecream import ic
+from machine import Pin
+import time as tm
+
 
 class Motor():
     """ 
@@ -18,13 +22,16 @@ class Motor():
     --------
     `acelerar`: void
     `detener`: void
-
     """
-    def __init__(self,) -> object:
-        self.__giros:int = 0
+    #Variables del motor
+    pulsoscvuelta:int;
+    pin_motor:List[Pin,Pin] = [];
+
+
+    def __init__(self) -> object:
+        self.giros:int = 0
         self.velocidadactual:int = 0 
-
-
+        
     
     def acelerar(self) -> None:
         """
@@ -37,3 +44,7 @@ class Motor():
         ----------
         `None`
         """
+
+    def velocida(self) -> int:
+        ...
+        #Calculo de la velocidad con respecto a los datos #

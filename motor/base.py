@@ -7,6 +7,7 @@ class Motor_funciones(Protocol):
     def acelerar() -> None:
         ...
     
+
     def detener() -> None:
         ...
     
