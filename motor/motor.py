@@ -81,6 +81,5 @@ class Motor(Motor_funciones):
         """
         Calcula el numero de micropasos para realizar una vuelta
         """
-        
         return self.pulsoscvuelta * self.microstepping
     
