@@ -1,1 +1,1 @@
-from .base import Motor
+from .base import Motor_funciones
