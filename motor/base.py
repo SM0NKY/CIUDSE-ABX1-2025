@@ -6,7 +6,7 @@ class Motor_funciones(Protocol):
     def acelerar(self) -> Any:
         ...
 
-    def detener(self) -> Any:
+    def aplicar_aceleracion(self) -> Any:
         ...
     
     def contador_giros(self) -> Any:
