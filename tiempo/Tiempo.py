@@ -4,45 +4,49 @@ class Complete:
     pass
 class Lent:
     pass
+
 #Datos adquiridos
 class Datos(Data):
-    def Time(self, tiempo_restante):
+    def __init__(self, tiempo_restante: float):
         """
-        Tiempo restante hasta apogeo o aterrizaje (en días, minutos, etc.).
+        Inicializa el objeto con el tiempo restante.
+        Usar __init__ es la forma correcta de crear un constructor en Python.
         """
         self.tiempo_restante = tiempo_restante
 
-        def obtener_datos(self):
-            return self.tiempo_restante
+    def obtener_tiempo(self) -> float:
+        """
+        Devuelve el tiempo restante. Este método ahora es accesible por otras clases.
+        """
+        return self.tiempo_restante
+
 #Abrir completa
 class Apertura_Com(Complete):
-    def apertura_com(self, datos:Datos):
+    def apertura_com(self, datos: Datos) -> bool:
         """
         Esto determinará si el tiempo es el justo para realizar la apertura completa.
-        Ejemplo: abrir si queda poco tiempo (<= 2 unidades
+        Ejemplo: abrir si queda poco tiempo (<= 2 unidades).
         """
-        tiempo = datos.obtener_tiempo()
-        if tiempo <=2:
+        tiempo = datos.obtener_tiempo()  # Llamada correcta al método
+        if tiempo <= 2:
             print("Apertura completa activada")
             return True
         else:
-            print("La apertura fallo")
+            print("La apertura completa falló")  # Mensaje más claro
             return False
 
-#Aluste lento
-class Apentura_Len(Lent):
-    def apertura_len(self, datos:Datos):
+#Ajuste lento
+class Apertura_Len(Lent):  # Corregido el typo "Apentura"
+    def apertura_len(self, datos: Datos) -> bool:
         """
-        Esto determinara su si el timepo se acerca para abrir de forma lenta:
+        Determina si el tiempo se acerca para abrir de forma lenta.
         """
-        tiempo = datos.obtener_tiempo()
+        tiempo = datos.obtener_tiempo()  # Llamada correcta al método
         if tiempo <= 7:
-            print("Aperura lenta activa")
+            print("Apertura lenta activa")  # Corregido el typo "Aperura"
             return True
         else:
-            print("Apertura fallida")
+            print("Apertura lenta fallida")  # Mensaje más claro
             return False
-        
 
-
-#Si es necesario, calcular el error de los tiempos, velocidad y aceleracion, obtenidos con los calculados
+#Si es necesario, calcular el error de los tiempos, velocidad y aceleracion, obtenidos con los calculados por el programa
